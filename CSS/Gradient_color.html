@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 200px;
+            width: 200px;
+            color: white;
+            background: linear-gradient(to right,pink,palevioletred,rgb(242, 85, 111));
+        }
+        .box2{
+            height: 200px;
+            width: 200px;
+            color: white;
+            background: linear-gradient(45deg,pink,palevioletred,rgb(242, 85, 111));
+        }
+        .box3{
+            height: 200px;
+            width: 200px;
+            color: white;
+            background: radial-gradient(pink,palevioletred,rgb(242, 85, 111));
+        }
+       .first p {
+        background-color: aquamarine;
+      }
+      section p {
+        background-color: bisque;
+      }
+      .second p {
+        color: green;
+      }
+      .second > p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">this is gradient color</div><br>
+    <div class="box2">this is gradient color</div><br>
+    <div class="box3">this is gradient color</div><br>
+
+    <div class="first">
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+
+    <section>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </section>
+
+    <div class="second">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+      <div class="third">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere,
+          voluptatem!
+        </p>
+      </div>
+    </div>
+    
+  </body>
+</html>

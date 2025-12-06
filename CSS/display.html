@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Properties</title>
+    <style>
+        div{
+            height: 150px;
+            width: 150px;
+            border: 1px solid black;
+            border-radius: 10px;
+            border-style:dashed;
+            border-style: solid dashed dotted double;
+            /* border-top-style: solid; */
+        }
+        .first{
+            display: block;
+        }
+        .second{
+            display: inline;
+        }
+        .third{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display properties</h1>
+    <h2>Block elements</h2>
+    <div class="first">This is block element </div>
+    <div class="first">This is block element</div>
+
+    <h2>Inline elements</h2>
+    <div class="second">This is inline element </div>
+    <div class="second">This is inline element</div>
+
+    <h2>Inline-Block elements</h2>
+    <div class="third">This is inline-block element</div>
+    <div class="third">This is inline-block element</div>
+</body>
+</html>

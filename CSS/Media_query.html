@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media_query</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            display: flex;
+            flex-direction: row;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: palevioletred;
+            border: 1px solid black;
+        }
+        @media (min-width: 500px) and (max-width: 1000px){
+            .box{
+                background-color: bisque;
+            }
+            .body{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">This is an example of Media Query</div>
+    <div class="box">This is an example of Media Query</div>
+</body>
+</html>

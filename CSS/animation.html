@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: palevioletred;
+            position: relative;
+            border: 3px solid black;
+            /* animation-name: rightMovement;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+            animation-delay: 0s;
+            animation-fill-mode:forwards; */
+            animation: rightMovement 3s infinite alternate ease-in-out 0s both;
+        }
+        @keyframes rightMovement{
+            0%{
+                top: 0px;
+                left: 0px;
+                background-color: palevioletred;
+            }
+            50%{
+                top: 500px;
+                left: 650px;
+                background-color: aquamarine;
+            }
+            to{
+                top: 0px;
+                left: 1300px;
+                background-color: bisque;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">This is my first transition</div>
+    <!-- <div class="box" img src="images (1).jpg" alt="image 1"></div> -->
+</body>
+</html>

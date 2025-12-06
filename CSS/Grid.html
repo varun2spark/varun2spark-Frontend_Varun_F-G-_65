@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;;
+        }
+        body{
+            /* vh -> viewport height ; vw -> viewport width */
+            height: 100vh; 
+            width: 100vw;
+        }
+        .container{
+            height: 80%;
+            width: 80%;
+            color: white;
+            border: 5px solid pink ;
+            background-color: beige;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(4,1fr);        
+        }
+        .item{
+            border: 1px solid white;
+            background-color: palevioletred;
+            text-align: center;
+        }
+        .header{
+            grid-column: 1/4;
+        }
+        .merge{
+            grid-row: 3/5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class = "item header">box 1</div>
+        <div class = "item header">box 2</div>
+        <div class = "item merge">box 3</div>
+        <div class = "item">box 4</div>
+        <div class = "item">box 5</div>
+        <div class = "item">box 6</div>
+        <div class = "item">box 7</div>
+        <div class = "item">box 8</div>
+        <div class = "item header">box 9</div>
+    </div><br>
+</body>
+</html>

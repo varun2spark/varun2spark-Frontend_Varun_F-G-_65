@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice_Grid</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+        .container{
+            height: 80%;
+            width: 80%;
+            color: white;
+            border: 5px solid pink ;
+            background-color: beige;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.5fr 1fr 0.5fr;
+            grid-template-rows: 0.5fr 2fr 0.5fr;  
+        }
+        .item{
+            border: 1px solid white;
+            background-color: palevioletred;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header{
+            grid-column: 1/4;
+        }
+        .footer{
+            grid-column: 1/4;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class = "item header">Header</div>
+        <div class = "item">Box 2</div>
+        <div class = "item">Box 3</div>
+        <div class = "item">Box 4</div>
+        <div class = "item footer">Footer</div>
+    </div>
+</body>
+</html>

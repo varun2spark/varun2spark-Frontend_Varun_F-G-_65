@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rocket Up Animation</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: lightskyblue;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+    .box {
+      height: 200px;
+      width: 200px;
+      display: grid;
+      place-items: center;
+
+    }
+    .rocket {
+      width: 120px;
+      height: auto;
+      animation: flyUp 3s linear infinite;
+    }
+
+    @keyframes flyUp {
+      0%   { transform: translateY(60vh); }
+      100% { transform: translateY(-80vh); }
+    }
+
+    @keyframes bob {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img class="rocket" src="rocket.png" alt="rocket"/>
+  </div>
+</body>
+</html>
