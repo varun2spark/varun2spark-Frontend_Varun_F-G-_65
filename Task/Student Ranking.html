@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Ranking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #searchBox {
+      padding: 6px 10px;
+      border-radius: 15px;
+      border: 1px solid #888;
+      margin-bottom: 10px;
+      width: 250px;
+    }
+    #calculateRankBtn {
+      padding: 6px 12px;
+      margin-left: 10px;
+      border: 1px solid #333;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+    #calculateRankBtn:hover {
+      background-color: #555;
+    }
+    .table-container {
+      max-height: 250px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead th {
+      position: sticky;
+      top: 0;
+      background-color: #222;
+      color: white;
+      padding: 8px;
+    }
+    tbody td {
+      padding: 6px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tbody tr:hover {
+      background-color: #dfe8ff;
+    }
+    .marks-cell {
+      background-color: #fffbe6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Student Ranking</h1>
+
+  <input type="text" id="searchBox" placeholder="Search...">
+  <button id="calculateRankBtn">Calculate Rank</button>
+
+  <div class="table-container">
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Marks</th>
+          <th>Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>101</td>
+          <td>Aarav</td>
+          <td class="marks-cell" contenteditable="true">78</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Priya</td>
+          <td class="marks-cell" contenteditable="true">92</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>103</td>
+          <td>Rohan</td>
+          <td class="marks-cell" contenteditable="true">85</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>104</td>
+          <td>Simran</td>
+          <td class="marks-cell" contenteditable="true">60</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>105</td>
+          <td>Varun</td>
+          <td class="marks-cell" contenteditable="true">75</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    var searchBox = document.getElementById("searchBox");
+    var table = document.getElementById("studentTable");
+    var tbody = table.getElementsByTagName("tbody")[0];
+    var calculateBtn = document.getElementById("calculateRankBtn");
+
+    searchBox.addEventListener("input", function () {
+      var filter = searchBox.value.toLowerCase();
+      var rows = tbody.getElementsByTagName("tr");
+      for (var i = 0; i < rows.length; i++) {
+        var text = rows[i].textContent.toLowerCase();
+        rows[i].style.display = text.indexOf(filter) !== -1 ? "" : "none";
+      }
+    });
+
+    calculateBtn.addEventListener("click", function () {
+      var rows = tbody.getElementsByTagName("tr");
+      var data = [];
+      for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName("td");
+        var marks = parseFloat(cells[2].textContent.trim());
+        if (isNaN(marks)) marks = 0;
+        data.push({ row: rows[i], marks: marks });
+      }
+      data.sort(function (a, b) {
+        return b.marks - a.marks;
+      });
+      for (var j = 0; j < data.length; j++) {
+        var tr = data[j].row;
+        var tds = tr.getElementsByTagName("td");
+        tds[3].textContent = j + 1;
+        tbody.appendChild(tr);
+      }
+    });
+  </script>
+
+</body>
+</html>
