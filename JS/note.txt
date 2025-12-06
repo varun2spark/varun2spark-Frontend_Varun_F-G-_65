@@ -1,0 +1,3 @@
+>>> Var
+   re-declare is possible
+   re-assign is possible

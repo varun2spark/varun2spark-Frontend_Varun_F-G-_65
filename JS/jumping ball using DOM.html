@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Ball using DOM</title>
+    <style>
+        .ball {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: palevioletred;
+            position: absolute;
+            top: 0px;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">Start</button>
+    <button id="btn2">Stop</button>
+    <div class="ball"></div>
+
+    <script>
+        let ball = document.querySelector(".ball");
+        let button1 = document.getElementById("btn1");
+        let button2 = document.getElementById("btn2");
+        let pos = 0, dir = 1, interval;
+
+        button1.onclick = function() {
+            if (!interval) {
+                interval = setInterval(() => {
+                    pos = pos + dir * 5;
+                    ball.style.top = pos + "px";
+
+                    if (pos >= 300 || pos <= 0) {
+                        dir = dir * -1;
+                    }
+                }, 30);
+            }
+        }
+
+        button2.onclick = function() {
+            clearInterval(interval);
+            interval = null;
+        }
+    </script>
+</body>
+</html>
